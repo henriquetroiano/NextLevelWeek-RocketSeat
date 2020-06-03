@@ -19,7 +19,8 @@
   "homepage": "https://github.com/henriquetroiano/NextLevelWeek-RocketSeat#readme",
   "dependencies": {
     "eslint": "^7.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "reload": "^3.0.5"
   },
   "devDependencies": {
     "eslint-plugin-html": "^6.0.2",
