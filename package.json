@@ -1,0 +1,28 @@
+{
+  "name": "nextlevelweek-rocketseat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriquetroiano/NextLevelWeek-RocketSeat.git"
+  },
+  "author": "troiano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriquetroiano/NextLevelWeek-RocketSeat/issues"
+  },
+  "homepage": "https://github.com/henriquetroiano/NextLevelWeek-RocketSeat#readme",
+  "dependencies": {
+    "eslint": "^7.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-html": "^6.0.2",
+    "nodemon": "^2.0.4"
+  }
+}
