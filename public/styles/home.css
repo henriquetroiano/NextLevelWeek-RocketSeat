@@ -3,6 +3,8 @@
 
   background: url("../assets/home-background.svg") no-repeat;
   background-position: 35vw bottom;
+
+  transition: ease-in;
 }
 
 #page-home .content {

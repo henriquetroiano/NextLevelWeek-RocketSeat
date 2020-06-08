@@ -30,6 +30,7 @@ function getCities(event) {
   citiySelect.disabled = true;
 
   fetch(url).then(function (res) { return res.json() }).then(function (cities) {
+
     for (city of cities) {
 
       citiySelect.innerHTML = citiySelect.innerHTML + `<option value=${city.nome}>${city.nome}</option>`
@@ -45,31 +46,43 @@ document.querySelector('select[name=uf]').addEventListener("change", getCities);
 
 
 const itemsToCollect = document.querySelectorAll('.items-grid li');
+
+for (const item of itemsToCollect) {
+  item.addEventListener('click', handleSelectedItem)
+}
+
+
+const collectedItems = document.querySelector('input[name=items]')
 let selectedItems = [];
-itemsToCollect.forEach((li) => {
-  function funcao(event) {
 
-    const itemLi = event.target;
+function handleSelectedItem(event) {
+  const itemLi = event.target;
+  itemLi.classList.toggle('selected')
+  const itemId = itemLi.dataset.id;
 
-    itemLi.classList.toggle('selected');
+  // verificar se existem itens selecionado , se sim, pegar os itens selecionados
+  const alreadySelected = selectedItems.findIndex(item => {
+    const itemFound = item == itemId;
+    return itemFound
+  })
 
-    const itemId = event.target.dataset.id;
-
-    const alreadySelected = selectedItems.findIndex(item => {
-      const itemFound = item == itemId
-      return itemFound
-    });
-    if (alreadySelected >= 0) {
-      const filteredItems = selectedItems.filter(item => {
-        const itemIsDifferent = item != itemId
-        return itemIsDifferent
-      })
-      console.log(filteredItems)
-    }
+  // se ja estiver selecionado, tirar da selecao
+  if (alreadySelected >= 0) {
+    // tirar da selecao
+    const filteredItems = selectedItems.filter(item => {
+      const itemIsDifferent = item != itemId
+      return itemIsDifferent;
+    })
+    selectedItems = filteredItems
+  } else {
+    // / se não estiver selecionado
+    // adicionar a selecao
+    selectedItems.push(itemId)
   }
-  li.addEventListener('click', funcao)
-})
+  // atualizar campo escondido com os itens selecionados
+  collectedItems.value = selectedItems;
 
 
+}
 
 
