@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon -e * src/server.js"
+    "start": "nodemon -e * src/server.js",
+    "db": "nodemon -e * src/database/db.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "homepage": "https://github.com/henriquetroiano/NextLevelWeek-RocketSeat#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nunjucks": "^3.2.1"
+    "nunjucks": "^3.2.1",
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
