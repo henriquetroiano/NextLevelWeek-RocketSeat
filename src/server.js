@@ -17,14 +17,14 @@ nunjucks.configure('src/views', {
 //configurar caminhos da app
 
 server.get('/', function (req, res) {
-  return res.render('index.html', { title: 'Titulo' })
+  return res.render('index.html')
 })
 
 server.get('/create-point', function (req, res) {
   return res.render('create-point.html')
 })
 
-server.get('/search-results', function (req, res) {
+server.get('/search', function (req, res) {
   return res.render('search-results.html')
 })
 
